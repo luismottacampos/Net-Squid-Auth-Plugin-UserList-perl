@@ -5,11 +5,11 @@ use strict;
 
 =head1 NAME
 
-Net::Squid::Auth::Plugin::UserList - A User List-Based Credentials Validation Plugin for Net::Squid::Auth::Engine
+Net::Squid::Auth::Plugin::UserList - A User List-Based Credentials Validation Plugin for L<Net::Squid::Auth::Engine>
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
@@ -17,13 +17,13 @@ use version; our $VERSION = qv('0.01.01');
 
 =head1 SYNOPSIS
 
-If you're a system administrator trying to use Net::Squid::Auth::Engine to
+If you're a system administrator trying to use L<Net::Squid::Auth::Engine> to
 validate your user's credentials using a user:password list as credentials
 repository, do as described here:
 
 On C<$Config{InstallScript}/squid-auth-engine>'s configuration file:
 
-    plugin = Net::Squid::Auth::Plugin::UserList
+    plugin = UserList
     <UserList>
       users = <<EOF
         joe_average:secret
@@ -91,6 +91,12 @@ sub is_valid {
     no warnings;
     return $self->{_usermap}{$username} eq $password;
 }
+
+=head1 OTHER IMPLEMENTATIONS
+
+=head2 L<Net::Squid::Auth::Plugin::SimpleLDAP>
+
+A simple LDAP-based credentials validation plugin for L<Net::Squid::Auth::Engine>.
 
 =head1 AUTHOR
 
