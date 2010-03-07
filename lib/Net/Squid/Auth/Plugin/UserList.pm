@@ -13,7 +13,7 @@ Version 0.02
 
 =cut
 
-use version; our $VERSION = qv('0.02');
+our $VERSION = 0.02;
 
 =head1 SYNOPSIS
 
